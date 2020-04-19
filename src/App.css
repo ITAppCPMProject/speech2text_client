@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500,700");
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Header.Typography {
+  text-align: center;
+}
+
+.MuiTypography-h5 {
+  margin-top: 500px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
 }

@@ -1,29 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import axios from "axios";
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
+import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import themeFile from "./theme";
+import Navbar from "./Navbar";
+import Body from "./Body";
 
-export class App extends React.Component {
-  state = {
-    helloText: null
-  };
+const theme = createMuiTheme(themeFile);
 
-  componentDidMount() {
-    axios.get("/helloWorld").then(res => {
-      this.setState({
-        helloText: res.data
-      });
-    });
-  }
+class App extends React.Component {
   render() {
-    let text = this.state.helloText;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>{text}</p>
-        </header>
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <Navbar />
+        <Body />
+      </MuiThemeProvider>
     );
   }
 }
